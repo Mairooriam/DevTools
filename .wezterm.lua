@@ -3,14 +3,16 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- CHANGE DEFUALT CWD WHEN CLONE
-config.default_cwd = "C:/Users/35850/Desktop/repositories"
+local default_path = "C:/Users/35850/Desktop/repositories"
+
+config.default_cwd = default_path
 
 config.initial_cols = 120
 config.initial_rows = 28
 
 config.font_size = 10
--- config.color_scheme = "Vs Code Dark+ (Gogh)"
-config.color_scheme = "Dracula"
+config.color_scheme = "Vs Code Dark+ (Gogh)"
+--config.color_scheme = "Dracula"
 -- config.color_scheme = "Espresso"
 config.default_prog = { "pwsh" }
 config.enable_scroll_bar = true
@@ -36,4 +38,20 @@ config.keys = {
 	{ key = "u", mods = "CTRL", action = wezterm.action.ScrollByPage(-0.75) },
 	{ key = "d", mods = "CTRL", action = wezterm.action.ScrollByPage(0.75) },
 }
+
+wezterm.on("gui-startup", function(cmd)
+	local mux = wezterm.mux
+	local tab1, pane1, window = mux.spawn_window({
+		cwd = default_path,
+	})
+
+	local tab2 = window:spawn_tab({
+		cwd = default_path,
+	})
+
+	local tab3 = window:spawn_tab({
+		cwd = default_path,
+	})
+end)
+
 return config
