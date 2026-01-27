@@ -1,22 +1,18 @@
--- Pull in the wezterm API
 local wezterm = require("wezterm")
 
--- This will hold the configuration.
 local config = wezterm.config_builder()
 
--- This is where you actually apply your config choices.
+-- CHANGE DEFUALT CWD WHEN CLONE
+config.default_cwd = "C:/Users/35850/Desktop/repositories"
 
--- For example, changing the initial geometry for new windows:
 config.initial_cols = 120
 config.initial_rows = 28
 
--- or, changing the font size and color scheme.
 config.font_size = 10
 -- config.color_scheme = "Vs Code Dark+ (Gogh)"
--- config.color_scheme = "Dracula"
-config.color_scheme = "Espresso"
+config.color_scheme = "Dracula"
+-- config.color_scheme = "Espresso"
 config.default_prog = { "pwsh" }
-
 config.enable_scroll_bar = true
 
 -- KEYBINDINGS
@@ -40,6 +36,4 @@ config.keys = {
 	{ key = "u", mods = "CTRL", action = wezterm.action.ScrollByPage(-0.75) },
 	{ key = "d", mods = "CTRL", action = wezterm.action.ScrollByPage(0.75) },
 }
-
--- Finally, return the configuration to wezterm:
 return config
