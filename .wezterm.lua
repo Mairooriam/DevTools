@@ -35,8 +35,8 @@ config.keys = {
 	{ key = "9", mods = "CTRL", action = wezterm.action.ActivateTab(-1) },
 
 	-- VIM STYLE STUFF
-	{ key = "u", mods = "CTRL", action = wezterm.action.ScrollByPage(-0.75) },
-	{ key = "d", mods = "CTRL", action = wezterm.action.ScrollByPage(0.75) },
+	--	{ key = "pageup", mods = "CTRL", action = wezterm.action.ScrollByPage(-0.75) },
+	--	{ key = "pagedown", mods = "CTRL", action = wezterm.action.ScrollByPage(0.75) },
 }
 
 wezterm.on("gui-startup", function(cmd)
@@ -55,3 +55,4 @@ wezterm.on("gui-startup", function(cmd)
 end)
 
 return config
+

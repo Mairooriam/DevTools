@@ -2,3 +2,4 @@
 image_tables_into_xlsx/data/
 image_tables_into_xlsx/output/
 image_tables_into_xlsx/.vscode
+image_tables_into_xlsx/uv.lock
