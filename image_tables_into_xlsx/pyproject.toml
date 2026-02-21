@@ -7,5 +7,13 @@ requires-python = ">=3.14"
 dependencies = [
     "pandas",
     "camelot-py @ git+https://github.com/Mairooriam/camelot.git",
-    "jupyter"
+    "jupyter",
+    "pyperclip",
+    "pymupdf",  # For extracting images from PDFs
+    "pytesseract",  # For OCR on images
+    "pillow",  # For image processing
+    "fastapi",  # For building REST APIs
+    "uvicorn[standard]",  # For running the FastAPI server
+    "pydantic",  # For data validation (used by FastAPI)
+    "requests"
 ]
